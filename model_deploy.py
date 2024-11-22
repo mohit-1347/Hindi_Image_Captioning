@@ -80,29 +80,8 @@ def generate_caption(model, tokenizer, features, max_length):
     return caption
 
 # Test on an image
-# test_image = "blind.jpg"
-# preview_image(test_image)
-# test_features = extract_features(test_image)
-# caption = generate_caption(capmodel, tokenizer, test_features, max_length)
-# print("Generated Caption:", caption)
-
-import tkinter as tk
-from tkinter import filedialog
-root = tk.Tk()
-root.withdraw()
-file_path = filedialog.askopenfilename(
-    filetypes=[("Image Files", "*.jpg;*.jpeg;*.png;*.bmp")]
-)
-if file_path:
-    try:
-        # Preview the image
-        preview_image(file_path)
-        
-        # Extract features
-        test_features = extract_features(file_path)
-        
-        # Generate caption
-        caption = generate_caption(capmodel, tokenizer, test_features, max_length)
-        print("Generated Caption:", caption)
-    except Exception as e:
-        print(f"An error occurred: {e}")
+test_image = "blind.jpg"
+preview_image(test_image)
+test_features = extract_features(test_image)
+caption = generate_caption(capmodel, tokenizer, test_features, max_length)
+print("Generated Caption:", caption)
